@@ -1,34 +1,36 @@
-
-
 <div class="sign-up-main container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">{{title}}</div>
         <div class="card-body">
-          <form>
-            <div class="form-group row">
-              <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+          <form id="sign-up">
+            <div class="form-group mb-2 row">
+              <label for="fName" class="col-md-4 col-form-label text-md-right">First Name</label>
               <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" required autofocus>
+                <input id="fName" type="text" class="form-control" name="fName" autofocus>
+                <p id="fName-error" class="error-message"></p>
               </div>
             </div>
-            <div class="form-group row">
-              <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+            <div class="form-group mb-2 row">
+              <label for="lName" class="col-md-4 col-form-label text-md-right">Last Name</label>
               <div class="col-md-6">
-                <input id="email" type="email" class="form-control" name="email" required>
+                <input id="lName" type="text" class="form-control" name="lName">
+                <p id="lName-error" class="error-message"></p>
               </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group mb-2 row">
+              <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+              <div class="col-md-6">
+                <input id="email" type="text" class="form-control" name="email">
+                <p id="email-error" class="error-message"></p>
+              </div>
+            </div>
+            <div class="form-group mb-2 row">
               <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
               <div class="col-md-6">
-                <input id="password" type="password" class="form-control" name="password" required>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-              <div class="col-md-6">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                <input id="password" type="password" class="form-control" name="password">
+                <p id="password-error" class="error-message"></p>
               </div>
             </div>
             <div class="form-group row mb-0">
@@ -42,5 +44,3 @@
     </div>
   </div>
 </div>
-
-

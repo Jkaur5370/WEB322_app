@@ -30,7 +30,11 @@ app.get('/', function (req, res) {
     featuredRentals: getFeaturedRentals()
   });
 });
-
+app.get('/welcome', function (req, res) {
+  res.render('home', {
+    featuredRentals: getFeaturedRentals()
+  });
+});
 app.get('/rentals', function (req, res) {
   res.render('rentals', {
     rentalsByCity: getRentalsByCityAndProvince()
@@ -42,7 +46,47 @@ app.get('/sign-up', function (req, res) {
     title: 'Sign Up'
   });
 });
-
+app.post('/sign-up', function (req, res) {
+  console.log("req.body", req.body);
+  const fName = req?.body?.fName;
+  const lName = req?.body?.lName;
+  const email = req?.body?.email;
+  const password = req?.body?.password;
+  var emailError = ""
+  var passwordError = ""
+  var fNameError = ""
+  var lNameError = ""
+  if (!fName) {
+    fNameError = 'First name is required';
+  }
+  if (!lName) {
+    lNameError = 'Last name is required';
+  }
+  if (!email) {
+    emailError = 'Email is required';
+  } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+    emailError = 'Invalid email format';
+  }
+  if (!password) {
+    passwordError = 'Password is required';
+  } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,12}$/.test(password)) {
+    passwordError = 'Password must be between 8 to 12 characters and contain at least one lowercase letter, uppercase letter, number, and symbol';
+  }
+  if (emailError == "" && passwordError == "" && fNameError == "" && lNameError == "") {
+    res.send({
+      status: 200,
+      message: "success !!"
+    });
+  } else {
+    res.send({
+      status: 400,
+      fName: fNameError,
+      lName: lNameError,
+      email: emailError,
+      password: passwordError,
+    });
+  }
+})
 app.get('/log-in', function (req, res) {
   res.render('log-in', {
     title: 'Log In'
