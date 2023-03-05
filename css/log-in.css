@@ -11,3 +11,17 @@
 .log-in-main .btn {
     background-color: rgb(46, 107, 102);
 }
+.card-header {
+    color: rgb(46, 107, 102);
+    background-color: transparent;
+    text-align: center;
+    font-size: xx-large;
+    border: none;
+}
+
+.error-message {
+    font-style: italic;
+    margin-bottom: auto;
+    font-size: small;
+    color: rgba(249, 24, 24, 0.895);
+}
