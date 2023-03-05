@@ -1,0 +1,197 @@
+.Entry {
+
+  font-family: Klarna Text,Helvetica Neue,Arial,Helvetica,sans-serif;
+  flex-direction: column;
+  min-height: 410px;
+  font-weight: bold;
+  background-size: cover;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  background-image: url("p1.jpg");
+  background-position: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+input[type="text"],
+select,
+textarea {
+  width: 100px; 
+  padding: 12px; 
+  border: 1px solid rgb(240, 230, 226); 
+  border-radius: 4px; 
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0%;
+}
+
+.destination {
+  margin-top: 120px;
+  width:1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 255, 255);
+  height: 190px;
+  border: none;
+ border-radius: 10px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: center;
+
+}
+
+
+.destination select {
+  width: 200px; 
+  padding: 12px; 
+  border: 1px solid rgb(240, 230, 226); 
+  border-radius: 4px; 
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: rgb(250, 85, 3);
+  padding: 12px 20px;
+  font-weight: bold;
+margin-left: 10px;
+
+  border: none;
+  height:50px;
+  width:50px;
+  border-radius: 100px;
+  cursor: pointer;
+  background-image: url("button.png");
+  background-repeat: no-repeat;
+  background-size: 26px;
+background-position: center;
+}
+
+
+
+
+.button:hover {
+  background-color: #4442eb;
+}
+
+input[type="date"] {
+ 
+  padding: 12px;
+  width: 100px; 
+  border: 1px solid rgb(6, 6, 6);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.information {
+  background-color: #ffffff;
+  padding-bottom: 2.5rem;
+}
+
+.information h2 {
+  padding: 40px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.loc li img {
+  width: 200px;
+  height:220px;
+  border-radius: 8px;
+ 
+}
+
+
+.loc {
+  display: flex;
+
+  justify-content: space-around;
+  list-style: none;
+  transition: all .5s ease-in-out;
+  text-align: center;
+}
+
+.loc p{
+  text-align: center;
+  line-height: 24px;
+ margin-top: 10px;
+  font-size: 20px;
+  
+}
+
+.loc img:hover {
+  transform: scale(1.1) ;
+}
+
+
+.about {
+  background-color: #ffffff;
+  padding-bottom: 2.5rem;
+}
+
+.about p {
+  padding: 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+ font-family: Klarna Text,Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+
+.imgcover li img {
+  width: 90px;
+  height:80px;
+}
+
+
+.imgcover {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  list-style: none;
+  font-family: Klarna Text,Helvetica Neue,Arial,Helvetica,sans-serif;
+  font-size:large;
+
+}
+
+
+
+
+.featured {
+  font-family: Klarna Text,Helvetica Neue,Arial,Helvetica,sans-serif;
+   min-height: 420px;
+  font-weight: bold;
+  margin-left: 55px;
+
+}
+
+.featured img {
+  width: 320px;
+  height:250px;
+  margin-left: 60px;
+}
+
+
+
+.featured h2{
+  margin-top: 60px;
+  text-align: center;
+  font-size:30px;
+  color: #ffffff;
+  background-color: rgb(46, 107, 102);
+  margin-right: 60px;
+}
+
+.featured div {
+  float: left;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+
+
+
