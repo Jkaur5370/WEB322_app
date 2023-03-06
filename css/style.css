@@ -173,3 +173,12 @@ nav {
   color: #b1bdca;
   text-decoration: none;
 }
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+span {
+  font-weight: bold;
+}

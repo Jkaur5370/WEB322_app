@@ -12,10 +12,11 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
 import { getRentalsByCityAndProvince, getFeaturedRentals } from "./Data Module/rentals-db.js";
-
+import * as dotenv from 'dotenv';
+import sgMail from '@sendgrid/mail';
+dotenv.config()
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const app = express();
-
-
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.set('views', './views');
@@ -31,8 +32,8 @@ app.get('/', function (req, res) {
   });
 });
 app.get('/welcome', function (req, res) {
-  res.render('home', {
-    featuredRentals: getFeaturedRentals()
+  res.render('welcome', {
+    isUser: true
   });
 });
 app.get('/rentals', function (req, res) {
@@ -47,7 +48,6 @@ app.get('/sign-up', function (req, res) {
   });
 });
 app.post('/sign-up', function (req, res) {
-  console.log("req.body", req.body);
   const fName = req?.body?.fName;
   const lName = req?.body?.lName;
   const email = req?.body?.email;
@@ -73,6 +73,23 @@ app.post('/sign-up', function (req, res) {
     passwordError = 'Password must be between 8 to 12 characters and contain at least one lowercase letter, uppercase letter, number, and symbol';
   }
   if (emailError == "" && passwordError == "" && fNameError == "" && lNameError == "") {
+    const msg = {
+      to: email,
+      from: 'Jaspritk246701@gmail.com',
+      subject: `Welcome to Renttastic, ${fName}`,
+      text: `Dear ${fName + " " + lName},\n\nI am delighted to welcome you to Renttastic. Thank you for joining our us!!\n\nIf you have any questions or feedback, please do not hesitate to reach out to me or our support team.\n\nBest regards,\nJasprit Kaur,\nRenttastic`,
+    };
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log("sgMail then");
+      }, error => {
+        console.error("sgMail err", error);
+
+        if (error.response) {
+          console.error(error.response.body)
+        }
+      });
     res.send({
       status: 200,
       message: "success !!"

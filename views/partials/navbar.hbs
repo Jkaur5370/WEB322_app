@@ -6,8 +6,11 @@
 
     <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="/rentals"><i class="fa fa-bed"></i>Rentals</a></li>
-    <li><a href="/sign-up"><i class="fa fa-share"></i>Sign Up</a></li>
-    <li><a href="/log-in"><i class="fa fa-check"></i>Log In</a></li>
+    {{#if isUser}}
+    {{else}}
+  <li><a href="/sign-up"><i class="fa fa-share"></i>Sign Up</a></li>
+  <li><a href="/log-in"><i class="fa fa-check"></i>Log In</a></li>
+    {{/if}}
   </ul>
   <div class="format">
     <div class="first"></div>
